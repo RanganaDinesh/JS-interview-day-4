@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Day - 4 interview questions</h1>
+    <h2>1.How many operators do we have in JS ?</h2>
+    <pre>
+        There are different types of JavaScript operators:
+        Arithmetic Operators
+        Assignment Operators
+        Comparison Operators
+        Logical Operators
+        Conditional Operators
+        Type Operators
+    </pre>
+    <h2>2.What are pure functions?</h2>
+    <pre>
+        A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function
+        exampls:
+        function operationAdd(a, b){ // A pure function adding two integers passed in it.
+            return a+b;
+        }
+        operationAdd(2,3)//output :- 5
+
+    </pre>
+    <h2>3.What is callback hell</h2>
+    <pre>
+        Callback Hell is a pattern with multiple nested callbacks which makes code hard to read and debug when dealing with asynchronous logic.
+         The callback hell looks like a pyramid structure
+
+         example:
+         function step(callback) {
+            console.log("data")
+            callback()
+            
+          }
+          function step1(callback) {
+            console.log("data1")
+            callback()
+            
+          }
+          function step2(callback) {
+            console.log("data2")
+            callback()
+            
+          }
+          function step3(callback) {
+            console.log("data3")
+          callback()
+            
+          }
+          step(function(){
+            step1(function(){
+              step2(function(){
+               step3(function(){
+                 console.log("result")
+               })
+              })
+            })
+          })
+    </pre>
+    <h2>4.What is promise chaining</h2>
+    <pre>
+        The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.
+         Let's take an example of promise chaining for calculating the final result,
+
+         You can perform an operation after a promise is resolved using methods then(), catch() and finally().
+         example:
+         let count = 7
+         let promises = new Promise(function (resolve,reject) {
+            
+           if(count){
+             resolve("HI")
+           }
+            else{
+              reject("bye")
+            }
+              
+          })
+         promises.then(function chain(result) {
+           console.log("result")//>>>>>>>>>>>>>>>>>>>>>.output
+           
+         }).catch(function err(Error) {
+           console.log("Error")
+           
+         }).finally(function codeex(){
+           console.log("code is excuted successfully")//>>>>>>>>>>>>>>>>>>>>output
+         })
+    </pre>
+    <h2>5.What are arrow functions?</h2>
+    <pre>
+        Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows you to create functions
+         in a cleaner way compared to regular functions. For example,
+            example:
+            let greet = () => console.log('Hello');
+            greet(); // Hello
+    </pre>
+    <h2>6.Give an example of async/await</h2>
+    <pre>
+        let promises= new Promise(function (resolve, reject) {
+            setInterval(function () {
+              resolve("Hi Everyone")
+              
+            },4000)
+            
+          })
+          async function a() {
+            let awt = await promises;
+            console.log(awt)
+            console.log("async operations code is excuted ")
+            
+          }
+          a()
+    </pre>
+    <h2>7.What is a Temporal Dead Zone?</h2>
+    <pre>
+        Temporal Dead Zone is the period of time during which the let and const declarations cannot be accessed. 
+        Temporal Dead Zone starts when the code execution enters the block which contains the let or const 
+        declaration and continues until the declaration has executed
+    </pre>
+
+</body>
+</html>
